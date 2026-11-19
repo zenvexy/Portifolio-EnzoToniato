@@ -2,7 +2,7 @@ const resources = {
   pt: {
     translation: {
       controls: { theme: 'Tema', language: 'Idioma', menu: 'Abrir menu', projectFilter: 'Filtrar projetos' },
-      page: { homeTitle: 'Enzo Toniato | Desenvolvedor', projectsTitle: 'Projetos | Enzo Toniato', homeDescription: 'Portfólio de Enzo Toniato, desenvolvedor full-stack em formação.', projectsDescription: 'Projetos de Flutter, C, frontend, React, Python, full-stack e backend de Enzo Toniato.' },
+      page: { homeTitle: 'Enzo Toniato | Desenvolvedor', projectsTitle: 'Projetos | Enzo Toniato', homeDescription: 'Portfólio de Enzo Toniato, desenvolvedor full-stack em formação.', projectsDescription: 'Projetos de Arduino, Flutter, C, frontend, React, Python, full-stack e backend de Enzo Toniato.' },
       themes: { light: 'Claro' },
       nav: ['Início', 'Sobre', 'Skills', 'Projetos', 'Contato'],
       home: {
@@ -34,7 +34,7 @@ const resources = {
         whatsapp: 'Interface de uma cafeteria construída com React, JavaScript e Vite.'
       },
       contact: { eyebrow: 'Vamos conversar', title: 'Tem uma ideia para construir?', description: 'Vamos transformar sua ideia em um produto digital.', email: 'E-mail', social: 'Também estou em' },
-      archive: { eyebrow: 'Projetos / 41 selecionados', title: 'Ideias transformadas<br>em <span>experiências digitais.</span>', description: 'Projetos desenvolvidos com C, Flutter, Python, React e soluções web e backend.', all: 'Todos', c: 'C', flutter: 'Flutter', frontend: 'Frontend', python: 'Python', react: 'React', fullstack: 'Full-stack', backend: 'Backend', hint: 'Passe o cursor sobre um card para ver a descrição.', github: 'Ver no GitHub', visit: 'Visitar site', groups: [['Aplicativos mobile', '17 projetos em 19 repositórios com Dart, Flutter e integrações com APIs.'], ['Fundamentos de programação', '2 repositórios com lógica, exercícios e programação estruturada.'], ['Experiências para web', '7 projetos com HTML, CSS, JavaScript, React, Vite e integração com APIs.'], ['Projetos em Python', '5 projetos com algoritmos, desafios e aplicações web em Flask, FastAPI e Django.'], ['Interfaces em React', '1 projeto de interface interativa com React.'], ['Aplicações completas', '8 projetos com integração entre frontend, backend e dados.'], ['APIs e serviços', '1 repositório de backend para integração com Flutter.']] },
+      archive: { eyebrow: 'Projetos / 52 selecionados', title: 'Ideias transformadas<br>em <span>experiências digitais.</span>', description: 'Projetos desenvolvidos com Arduino, C, Flutter, Python, React, soluções web e backend.', all: 'Todos', c: 'C', flutter: 'Flutter', frontend: 'Frontend', python: 'Python', react: 'React', fullstack: 'Full-stack', backend: 'Backend', arduino: 'Arduino', hint: 'Passe o cursor sobre um card para ver a descrição.', github: 'Ver no GitHub', visit: 'Visitar site', preview: 'Ver preview', groups: [['Aplicativos mobile', '18 projetos em 20 repositórios com Dart, Flutter e integrações com APIs.'], ['Fundamentos de programação', '2 repositórios com lógica, exercícios e programação estruturada.'], ['Experiências para web', '9 projetos com HTML, CSS, JavaScript, React, Vite e integração com APIs.'], ['Projetos em Python', '5 projetos com algoritmos, desafios e aplicações web em Flask, FastAPI e Django.'], ['Interfaces em React', '2 projetos com aplicações e backend em React.'], ['Aplicações completas', '11 projetos com integração entre frontend, backend e dados.'], ['APIs e serviços', '1 repositório de backend para integração com Flutter.'], ['Projetos embarcados', '4 projetos com Arduino, ESP32, sensores e comunicação Wi-Fi.']] },
       cards: [
         ['Financiamento', 'Aplicativo para simular valores, parcelas e condições de financiamento.'],
         ['Quiz Flutter', 'Aplicativo de perguntas e respostas com interação e pontuação.'],
@@ -83,7 +83,7 @@ const resources = {
   en: {
     translation: {
       controls: { theme: 'Theme', language: 'Language', menu: 'Open menu', projectFilter: 'Filter projects' },
-      page: { homeTitle: 'Enzo Toniato | Developer', projectsTitle: 'Projects | Enzo Toniato', homeDescription: 'Portfolio of Enzo Toniato, a full-stack developer in training.', projectsDescription: 'Flutter, C, frontend, React, Python, full-stack, and backend projects by Enzo Toniato.' },
+      page: { homeTitle: 'Enzo Toniato | Developer', projectsTitle: 'Projects | Enzo Toniato', homeDescription: 'Portfolio of Enzo Toniato, a full-stack developer in training.', projectsDescription: 'Arduino, Flutter, C, frontend, React, Python, full-stack, and backend projects by Enzo Toniato.' },
       themes: { light: 'Light' },
       nav: ['Home', 'About', 'Skills', 'Projects', 'Contact'],
       home: {
@@ -115,7 +115,7 @@ const resources = {
         whatsapp: 'A coffee shop interface built with React, JavaScript, and Vite.'
       },
       contact: { eyebrow: 'Let’s talk', title: 'Have an idea to build?', description: 'Let’s turn your idea into a digital product.', email: 'Email', social: 'You can also find me on' },
-      archive: { eyebrow: 'Projects / 41 selected', title: 'Ideas transformed<br>into <span>digital experiences.</span>', description: 'Projects built with C, Flutter, Python, React, and web and backend technologies.', all: 'All', c: 'C', flutter: 'Flutter', frontend: 'Frontend', python: 'Python', react: 'React', fullstack: 'Full-stack', backend: 'Backend', hint: 'Hover over a card to see its description.', github: 'View on GitHub', visit: 'Visit website', groups: [['Mobile applications', '17 projects across 19 repositories using Dart, Flutter, and API integrations.'], ['Programming fundamentals', '2 repositories with logic, exercises, and structured programming.'], ['Web experiences', '7 projects with HTML, CSS, JavaScript, React, Vite, and API integration.'], ['Python projects', '5 projects covering algorithms, challenges, and web applications with Flask, FastAPI, and Django.'], ['React interfaces', '1 interactive interface project built with React.'], ['Complete applications', '8 projects integrating frontend, backend, and data.'], ['APIs and services', '1 backend repository for Flutter integration.']] },
+      archive: { eyebrow: 'Projects / 52 selected', title: 'Ideas transformed<br>into <span>digital experiences.</span>', description: 'Projects built with Arduino, C, Flutter, Python, React, and web and backend technologies.', all: 'All', c: 'C', flutter: 'Flutter', frontend: 'Frontend', python: 'Python', react: 'React', fullstack: 'Full-stack', backend: 'Backend', arduino: 'Arduino', hint: 'Hover over a card to see its description.', github: 'View on GitHub', visit: 'Visit website', preview: 'Preview', groups: [['Mobile applications', '18 projects across 20 repositories using Dart, Flutter, and API integrations.'], ['Programming fundamentals', '2 repositories with logic, exercises, and structured programming.'], ['Web experiences', '9 projects with HTML, CSS, JavaScript, React, Vite, and API integration.'], ['Python projects', '5 projects covering algorithms, challenges, and web applications with Flask, FastAPI, and Django.'], ['React interfaces', '2 React application and backend projects.'], ['Complete applications', '11 projects integrating frontend, backend, and data.'], ['APIs and services', '1 backend repository for Flutter integration.'], ['Embedded projects', '4 projects using Arduino, ESP32, sensors, and Wi-Fi communication.']] },
       cards: [
         ['Financing', 'An app to simulate financing amounts, installments, and terms.'],
         ['Flutter Quiz', 'A question-and-answer application with interaction and scoring.'],
@@ -162,6 +162,47 @@ const resources = {
     }
   }
 };
+
+resources.pt.translation.skills.cards.splice(13, 0, ['Dados', 'Banco de dados NoSQL', 'Banco de dados orientado a documentos para aplicações modernas.']);
+resources.en.translation.skills.cards.splice(13, 0, ['Data', 'NoSQL database', 'A document database for modern applications.']);
+resources.pt.translation.skills.cards.push(['IDE', 'Desenvolvimento embarcado', 'Ambiente para programar placas Arduino e ESP32.']);
+resources.en.translation.skills.cards.push(['IDE', 'Embedded development', 'An environment for programming Arduino and ESP32 boards.']);
+resources.pt.translation.cards.push(
+  ['Flutter Home Widget', 'Aplicativo Flutter com um widget para exibir informações direto na tela inicial do dispositivo.'],
+  ['Enem Dev', 'Projeto web com conteúdos e atividades para apoiar os estudos para o Enem.'],
+  ['Arduino IDE', 'Exercícios e projetos desenvolvidos com Arduino IDE.'],
+  ['ESP32 Wi-Fi e Motor', 'Controle de motor serial conectado por Wi-Fi com uma placa ESP32.'],
+  ['Sensores com ESP32', 'Projeto de leitura e integração de sensores usando ESP32.'],
+  ['Prepara Saep', 'Projeto educacional criado para apoiar a preparação para a avaliação Saep.'],
+  ['MongoDB', 'Repositório com estudos e prática de banco de dados MongoDB.']
+);
+resources.en.translation.cards.push(
+  ['Flutter Home Widget', 'A Flutter app with a widget that displays information on the device home screen.'],
+  ['Enem Dev', 'A web project with content and activities to support Enem exam preparation.'],
+  ['Arduino IDE', 'Exercises and projects developed with the Arduino IDE.'],
+  ['ESP32 Wi-Fi and Motor', 'Serial motor control connected over Wi-Fi with an ESP32 board.'],
+  ['ESP32 Sensors', 'A project for reading and integrating sensors with an ESP32.'],
+  ['Prepara Saep', 'An educational project to support preparation for the Saep assessment.'],
+  ['MongoDB', 'A repository for MongoDB database study and practice.']
+);
+
+resources.pt.translation.cards.push(
+  ['Atividade IoT', 'Projeto de Internet das Coisas desenvolvido com microcontroladores.'],
+  ['Backend React', 'Projeto backend associado ao ecossistema React.'],
+  ['Saboré', 'Projeto de conclusão de curso desenvolvido em equipe.']
+);
+resources.en.translation.cards.push(
+  ['IoT Activity', 'An Internet of Things project developed with microcontrollers.'],
+  ['React Backend', 'A backend project associated with the React ecosystem.'],
+  ['Saboré', 'A team project developed as a capstone.']
+);
+
+resources.pt.translation.featured.sabore = 'Projeto de conclusão de curso desenvolvido em equipe, com uma experiência digital para o Saboré.';
+resources.pt.translation.featured.zenkai = 'Site casual de entretenimento com acesso às experiências Zenkai.';
+resources.en.translation.featured.sabore = 'A team capstone project delivering a digital experience for Saboré.';
+resources.en.translation.featured.zenkai = 'A casual entertainment site with access to the Zenkai experiences.';
+resources.pt.translation.cards.push(['Zenkai', 'Site casual de entretenimento com duas experiências Zenkai.']);
+resources.en.translation.cards.push(['Zenkai', 'A casual entertainment site with two Zenkai experiences.']);
 
 document.addEventListener('DOMContentLoaded', async () => {
   const menuButton = document.querySelector('.menu-toggle');
@@ -312,9 +353,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       setHtml('.projects-heading .section-heading h2', t('featured.title'));
       setHtml('.projects-heading > .button', t('featured.all'));
       const featuredDescriptions = document.querySelectorAll('.project-content > p:not(.project-kicker)');
-      if (featuredDescriptions[0]) featuredDescriptions[0].textContent = t('featured.flutter');
-      if (featuredDescriptions[1]) featuredDescriptions[1].textContent = t('featured.whatsapp');
-      document.querySelectorAll('.project-content a').forEach((link) => { link.innerHTML = t('featured.details'); });
+      if (featuredDescriptions[0]) featuredDescriptions[0].textContent = t('featured.sabore');
+      if (featuredDescriptions[1]) featuredDescriptions[1].textContent = t('featured.zenkai');
+      document.querySelectorAll('.project-content a').forEach((link) => {
+        const label = link.href.includes('github.com') ? t('archive.github') : link.href.includes('zenkai-add.vercel.app') ? t('archive.preview') : t('archive.visit');
+        link.innerHTML = `${label} <span>↗</span>`;
+      });
       setText('.contact-card .eyebrow', t('contact.eyebrow'));
       setText('.contact-card h2', t('contact.title'));
       setText('.contact-card > p:not(.eyebrow)', t('contact.description'));
@@ -327,15 +371,21 @@ document.addEventListener('DOMContentLoaded', async () => {
       setText('.archive-hero > p:not(.eyebrow)', t('archive.description'));
       const filterBar = document.querySelector('.filter-bar');
       if (filterBar) filterBar.setAttribute('aria-label', t('controls.projectFilter'));
-      ['all', 'c', 'flutter', 'frontend', 'python', 'react', 'fullstack', 'backend'].forEach((key) => setText(`[data-filter="${key}"]`, t(`archive.${key}`)));
+      ['all', 'c', 'flutter', 'frontend', 'python', 'react', 'fullstack', 'backend', 'arduino'].forEach((key) => setText(`[data-filter="${key}"]`, t(`archive.${key}`)));
       setText('.filter-hint', t('archive.hint'));
-      document.querySelectorAll('.project-group').forEach((group, index) => {
+      document.querySelectorAll('.project-group').forEach((group) => {
+        const heading = group.dataset.translationHeading || group.querySelector('h2').textContent;
+        group.dataset.translationHeading = heading;
+        const index = resources.pt.translation.archive.groups.findIndex(([title]) => title === heading);
         const values = t(`archive.groups.${index}`, { returnObjects: true });
         if (!Array.isArray(values)) return;
         group.querySelector('h2').textContent = values[0];
         group.querySelector('span').textContent = values[1];
       });
-      document.querySelectorAll('.archive-card').forEach((card, index) => {
+      document.querySelectorAll('.archive-card').forEach((card) => {
+        const originalTitle = card.dataset.translationTitle || card.querySelector('h2').textContent;
+        card.dataset.translationTitle = originalTitle;
+        const index = resources.pt.translation.cards.findIndex(([title]) => title === originalTitle);
         const values = t(`cards.${index}`, { returnObjects: true });
         const title = card.querySelector('h2');
         const description = card.querySelector('.archive-card-details p');
@@ -350,7 +400,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (title && tree) tree.setAttribute('aria-label', language === 'en' ? `Repositories for ${title}` : `Repositórios do projeto ${title}`);
       });
       document.querySelectorAll('.archive-card .archive-card-details > a, .archive-card .card-links a').forEach((link) => {
-        const key = link.href.includes('github.com') ? 'archive.github' : 'archive.visit';
+        const key = link.href.includes('github.com') ? 'archive.github' : link.href.includes('zenkai-add.vercel.app') ? 'archive.preview' : 'archive.visit';
         link.innerHTML = `${t(key)} <span>↗</span>`;
       });
       setText('[data-category="c"] .project-kicker', language === 'en' ? 'C LANGUAGE' : 'LINGUAGEM C');

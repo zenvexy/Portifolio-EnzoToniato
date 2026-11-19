@@ -173,12 +173,13 @@ img { display: block; max-width: 100%; }
 .tool-rail img[alt="GitHub"] { filter: brightness(0) invert(1); opacity: 1; }
 
 .projects-heading { display: flex; align-items: end; justify-content: space-between; gap: 25px; }
-.featured-projects { display: grid; grid-template-columns: 1.45fr 1fr; gap: 17px; margin-top: 54px; }
+.featured-projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; margin-top: 54px; }
 .project-feature { display: grid; grid-template-columns: 1fr; min-height: 470px; overflow: hidden; border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(145deg, color-mix(in srgb, var(--acid) 10%, var(--panel-solid)), color-mix(in srgb, var(--bg) 82%, var(--panel-solid))); box-shadow: inset 0 1px 0 color-mix(in srgb, var(--acid) 20%, transparent), 0 0 20px color-mix(in srgb, var(--acid) 4%, transparent); transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease; }
 .project-feature:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--acid) 52%, transparent); box-shadow: 0 16px 34px color-mix(in srgb, var(--acid) 10%, transparent); }
 .featured-main { grid-template-columns: 0.84fr 1fr; }
 .project-art { display: grid; min-height: 174px; place-items: center; background: radial-gradient(circle at center, color-mix(in srgb, var(--acid) 27%, transparent), transparent 66%), color-mix(in srgb, var(--acid) 10%, var(--bg-soft)); }
 .project-art img { width: 92px; height: 92px; object-fit: contain; filter: drop-shadow(0 9px 23px rgba(0, 0, 0, 0.22)); }
+.api-art img { width: min(170px, 56vw); height: min(170px, 56vw); }
 .phone-art { min-height: 100%; background: radial-gradient(circle, color-mix(in srgb, var(--acid) 29%, transparent), transparent 66%), color-mix(in srgb, var(--acid) 12%, var(--bg-soft)); }
 .api-art { background: radial-gradient(circle, color-mix(in srgb, var(--mint) 24%, transparent), transparent 66%), color-mix(in srgb, var(--mint) 10%, var(--bg-soft)); }
 .project-content { display: flex; flex-direction: column; padding: 27px; }

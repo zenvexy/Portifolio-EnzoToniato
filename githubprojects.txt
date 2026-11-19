@@ -19,6 +19,11 @@ https://github.com/zenvexy/Flutter-Maps.git
 https://github.com/zenvexy/Flutter-Google-Maps.git
 https://github.com/zenvexy/Flutter-API-Google-Maps.git
 https://github.com/zenvexy/Flutter-API-Receitas.git
+https://github.com/zenvexy/Flutter-HomeWidget.git
+
+TCC
+
+https://github.com/IsabelleBorges26/Sabore.git - https://sabore-back-end-rho.vercel.app/
 
 frontend
 
@@ -29,6 +34,19 @@ https://github.com/zenvexy/Pedra_Papel_Tesoura.git - https://zenvexy.github.io/P
 https://github.com/zenvexy/Album-Copa_2026.git - https://zenvexy.github.io/Album-Copa_2026
 https://github.com/zenvexy/Valor-Dolar.git - https://zenvexy.github.io/Valor-Dolar
 https://github.com/zenvexy/Receitas-Fullstack-API.git - https://zenvexy.github.io/Receitas-Fullstack-API/
+https://github.com/zenvexy/Enem-Dev.git - https://zenvexy.github.io/Enem-Dev/
+
+Zenkai
+
+https://zenkai-streaming.vercel.app/
+https://zenkai-add.vercel.app/
+
+arduino 
+
+https://github.com/zenvexy/Atividade_IOT.git
+https://github.com/zenvexy/Arduino-IDE.git
+https://github.com/zenvexy/ESP32-Wifi-MotorSerial.git
+https://github.com/zenvexy/ESP32-Sensores.git
 
 python
 
@@ -44,6 +62,7 @@ https://github.com/zenvexy/Django-Python.git
 react 
 
 https://github.com/zenvexy/StarWars-Galactic-Duel.git
+https://github.com/zenvexy/Backend-React.git
 
 fullstack 
 
@@ -55,6 +74,8 @@ https://github.com/zenvexy/Hotel-Reservas.git
 https://github.com/zenvexy/Daily_Check.git
 https://github.com/zenvexy/UltraTech-Store.git
 https://github.com/zenvexy/Eventos-Climaticos.git
+https://github.com/zenvexy/Prepara-Saep.git
+https://github.com/zenvexy/MongoDB.git
 
 c
 
