@@ -1,1 +1,1 @@
-![Gabimaru](./assets/gabimaru.png)
+![Gabimaru](./assets/gabimaru.png) 
