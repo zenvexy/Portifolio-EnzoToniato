@@ -1,413 +1,140 @@
-const resources = {
-  pt: {
-    translation: {
-      controls: { theme: 'Tema', language: 'Idioma', menu: 'Abrir menu', projectFilter: 'Filtrar projetos' },
-      page: { homeTitle: 'Enzo Toniato | Desenvolvedor', projectsTitle: 'Projetos | Enzo Toniato', homeDescription: 'Portfólio de Enzo Toniato, desenvolvedor full-stack em formação.', projectsDescription: 'Projetos de Arduino, Flutter, C, frontend, React, Python, full-stack e backend de Enzo Toniato.' },
-      themes: { light: 'Claro' },
-      nav: ['Início', 'Sobre', 'Skills', 'Projetos', 'Contato'],
-      home: {
-        available: '<span class="status-dot"></span>Disponível para novos desafios',
-        title: 'Olá, eu sou<br><span>Enzo Toniato.</span>',
-        description: 'Desenvolvedor full-stack criando experiências digitais rápidas, úteis e com personalidade.',
-        projects: 'Explorar projetos <span>↗</span>',
-        about: 'Sobre mim',
-        stats: ['Ano criando', 'Projetos', 'Tecnologias'],
-        profile: { location: 'Localização', locationValue: 'Pedreira, SP', specialty: 'Especialidade', specialtyValue: 'Full-stack' },
-        terminal: ['<b>const</b> player = {', '&nbsp;&nbsp;role: <i>"Desenvolvedor Full-Stack"</i>,', '&nbsp;&nbsp;location: <i>"Pedreira, SP"</i>,', '&nbsp;&nbsp;education: <i>"Sesi 356 - Amapro"</i>,', '&nbsp;&nbsp;course: <i>"Senai Jaguariúna · Desenvolvimento de Sistemas"</i>,', '&nbsp;&nbsp;powerUp: <i>"Aprendizado contínuo"</i>,', '&nbsp;&nbsp;mission: <i>"Desenvolver softwares úteis e práticos"</i>', '};']
-      },
-      about: {
-        eyebrow: '01 / Sobre', title: 'Uma mente curiosa<br>por trás do <span>código.</span>',
-        first: 'Sou um desenvolvedor em evolução constante, interessado em transformar boas ideias em produtos simples de usar e fáceis de manter.',
-        second: 'Minha jornada passa por aplicativos mobile, interfaces web, APIs e bancos de dados. Gosto de resolver problemas com clareza, organização e atenção aos detalhes.',
-        third: 'Também gosto de criar projetos pessoais e intuitivos, pensando em experiências úteis para quem vai utilizá-las. Meu objetivo é ajudar, desenvolver e me destacar na área da programação, buscando evolução constante a cada projeto.',
-        education: 'Moro em Pedreira, SP. Estudo no Sesi 356 - Amapro e faço o curso de Desenvolvimento de Sistemas no Senai Jaguariúna.',
-        link: 'Abrir todos os projetos <span>→</span>'
-      },
-      skills: {
-        eyebrow: '02 / Tecnologias', title: 'Minha stack e<br><span>ferramentas.</span>', tools: 'Outras ferramentas',
-        groups: [['Tecnologias', 'Linguagens e frameworks para interfaces e aplicações.'], ['Backend e dados', 'Serviços, APIs, bancos de dados e ambiente local.'], ['Ferramentas', 'Ferramentas que apoiam o fluxo de desenvolvimento.']],
-        cards: [['Mobile', 'Experiência prática', 'Framework para aplicativos multiplataforma com interfaces responsivas e componentes reutilizáveis.'], ['Linguagem mobile', 'Experiência prática', 'Linguagem utilizada para criar aplicativos modernos e eficientes com Flutter.'], ['Web', 'Experiência prática', 'Estrutura semântica e acessível para páginas e aplicações web.'], ['Web', 'Experiência prática', 'Estilização, layouts responsivos e identidade visual para interfaces web.'], ['Linguagem', 'Experiência prática', 'Fundamentos de lógica, estruturas de dados e programação estruturada.'], ['Linguagem', 'Experiência prática', 'Algoritmos, lógica de programação e scripts em Python.'], ['Web', 'Experiência prática', 'Interações no navegador, consumo de APIs e lógica para aplicações web.'], ['Biblioteca web', 'Experiência prática', 'Interfaces web interativas com componentes reutilizáveis em React.'], ['Backend', 'Experiência prática', 'APIs REST, rotas, integrações e regras de negócio no backend.'], ['Dados', 'Experiência prática', 'Modelagem relacional, consultas SQL e organização consistente de dados.'], ['Dados', 'Experiência prática', 'Integração tipada entre aplicações Node.js e bancos de dados relacionais.'], ['Backend as a Service', 'Serviços em nuvem', 'Autenticação, banco de dados e hospedagem para acelerar aplicações.'], ['Backend as a Service', 'PostgreSQL e APIs', 'Backend com banco de dados, autenticação e APIs prontas.'], ['Terminal', 'Linha de comando', 'Terminal para comandos Git e organização do fluxo de versionamento.'], ['Versionamento', 'Colaboração', 'Versionamento, colaboração e publicação dos repositórios de código.'], ['Editor', 'Ambiente de desenvolvimento', 'Editor para desenvolvimento, extensões e depuração de projetos.'], ['Testes de API', 'Requisições HTTP', 'Testes de endpoints e validação de APIs REST.'], ['Build tool', 'Frontend moderno', 'Ferramenta de build para projetos web rápidos e eficientes.'], ['Ambiente local', 'Servidor local', 'Ambiente para executar e testar aplicações web localmente.'], ['Modelagem', 'Diagramas', 'Diagramas de fluxo, arquitetura e modelos entidade-relacionamento.']]
-      },
-      featured: {
-        eyebrow: '03 / Projetos', title: 'Projetos em<br><span>destaque.</span>', all: 'Ver arquivo completo <span>↗</span>', details: 'Ver detalhes <span>→</span>',
-        flutter: 'Aplicativo Flutter que consulta endereços a partir do CEP com integração à API ViaCEP.',
-        whatsapp: 'Interface de uma cafeteria construída com React, JavaScript e Vite.'
-      },
-      contact: { eyebrow: 'Vamos conversar', title: 'Tem uma ideia para construir?', description: 'Vamos transformar sua ideia em um produto digital.', email: 'E-mail', social: 'Também estou em' },
-      archive: { eyebrow: 'Projetos / 52 selecionados', title: 'Ideias transformadas<br>em <span>experiências digitais.</span>', description: 'Projetos desenvolvidos com Arduino, C, Flutter, Python, React, soluções web e backend.', all: 'Todos', c: 'C', flutter: 'Flutter', frontend: 'Frontend', python: 'Python', react: 'React', fullstack: 'Full-stack', backend: 'Backend', arduino: 'Arduino', hint: 'Passe o cursor sobre um card para ver a descrição.', github: 'Ver no GitHub', visit: 'Visitar site', preview: 'Ver preview', groups: [['Aplicativos mobile', '18 projetos em 20 repositórios com Dart, Flutter e integrações com APIs.'], ['Fundamentos de programação', '2 repositórios com lógica, exercícios e programação estruturada.'], ['Experiências para web', '9 projetos com HTML, CSS, JavaScript, React, Vite e integração com APIs.'], ['Projetos em Python', '5 projetos com algoritmos, desafios e aplicações web em Flask, FastAPI e Django.'], ['Interfaces em React', '2 projetos com aplicações e backend em React.'], ['Aplicações completas', '11 projetos com integração entre frontend, backend e dados.'], ['APIs e serviços', '1 repositório de backend para integração com Flutter.'], ['Projetos embarcados', '4 projetos com Arduino, ESP32, sensores e comunicação Wi-Fi.']] },
-      cards: [
-        ['Financiamento', 'Aplicativo para simular valores, parcelas e condições de financiamento.'],
-        ['Quiz Flutter', 'Aplicativo de perguntas e respostas com interação e pontuação.'],
-        ['Consumo de Água', 'Calculadora para acompanhar e estimar o consumo de água.'],
-        ['Abastecimento de Veículos', 'Aplicativo para cálculos relacionados ao abastecimento de veículos.'],
-        ['Bitola', 'Ferramenta para apoiar cálculos e consultas de bitola.'],
-        ['Consulta ViaCEP', 'Consulta de endereços por CEP com integração à API ViaCEP.'],
-        ['Calculadora IMC', 'Aplicativo para calcular o índice de massa corporal de forma rápida.'],
-        ['Caminhadas e Calorias', 'Aplicativo para estimar o gasto calórico em caminhadas.'],
-        ['Funcionários JSON', 'Leitura e exibição de dados de funcionários a partir de JSON.'],
-        ['Splash Screen', 'Tela de abertura para aprimorar a experiência inicial do aplicativo.'],
-        ['Produtos', 'Aplicativo para listagem e apresentação de produtos.'],
-        ['Fotos de Caminhadas', 'Aplicativo para registrar e organizar fotos tiradas durante caminhadas.'],
-        ['GPS', 'Aplicativo Flutter com recursos de localização e dados de GPS.'],
-        ['Rotas e Mapas', 'Projeto de navegação que reúne rotas nativas e visualização de mapas.'],
-        ['Google Maps e API', 'Projeto que combina mapas do Google com consumo e integração de sua API.'],
-        ['Projeto Flutter', 'Projeto de aplicativo desenvolvido com Flutter.'],
-        ['Receitas com API', 'Aplicativo Flutter de receitas com integração a uma API.'],
-        ['Arquivos C', 'Coleção de exercícios e arquivos desenvolvidos na linguagem C.'],
-        ['Repositório LOP', 'Repositório de atividades da disciplina de Lógica de Programação em C.'],
-        ['Cafeteria Aroma', 'Interface de uma cafeteria criada com JavaScript, React e Vite.'],
-        ['Pizzaria Sesi', 'Website para apresentação de uma pizzaria, com layout e interações no navegador.'],
-        ['Truco Cartas', 'Jogo de cartas desenvolvido para o navegador com JavaScript.'],
-        ['Pedra, Papel e Tesoura', 'Versão web do jogo clássico com lógica feita em JavaScript.'],
-        ['Álbum Copa 2026', 'Aplicação web inspirada em um álbum de figurinhas da Copa do Mundo.'],
-        ['Valor do Dólar', 'Aplicação web para consultar e apresentar a cotação do dólar.'],
-        ['Receitas Fullstack API', 'Interface de receitas com consulta, cadastro, edição e exclusão via API REST.'],
-        ['Python Algoritmos', 'Repositório de algoritmos e exercícios em Python.'],
-        ['Livros com Flask', 'Projeto de cadastro de livros com interface web e API em Flask.'],
-        ['Desafios Python', 'Desafios e exercícios para praticar lógica de programação com Python.'],
-        ['FastAPI Python', 'Projeto de API desenvolvido com Python e FastAPI.'],
-        ['Django Python', 'Aplicação web desenvolvida com Python e Django.'],
-        ['Star Wars Galactic Duel', 'Projeto de duelo temático de Star Wars desenvolvido com React.'],
-        ['Just in Time', 'Projeto full-stack desenvolvido para praticar uma aplicação completa.'],
-        ['Escola Avaliação', 'Projeto de avaliação escolar com interface e backend.'],
-        ['Hotel Reservas', 'Projeto de reservas de hotel com interface e backend.'],
-        ['Daily Check', 'Aplicação para organizar verificações e atividades diárias.'],
-        ['UltraTech Store', 'Projeto de loja online com interface e backend.'],
-        ['GitParty', 'Aplicação full-stack criada para explorar integração entre frontend e backend.'],
-        ['Estacionamento', 'Sistema full-stack voltado ao controle e gerenciamento de estacionamento.'],
-        ['Eventos Climáticos', 'Aplicação web para registrar e acompanhar eventos climáticos por usuário, com interface, API e banco de dados.'],
-        ['Backend Receitas Flutter', 'Backend de receitas para integração com aplicativo Flutter.']
-      ]
-    }
-  },
-  en: {
-    translation: {
-      controls: { theme: 'Theme', language: 'Language', menu: 'Open menu', projectFilter: 'Filter projects' },
-      page: { homeTitle: 'Enzo Toniato | Developer', projectsTitle: 'Projects | Enzo Toniato', homeDescription: 'Portfolio of Enzo Toniato, a full-stack developer in training.', projectsDescription: 'Arduino, Flutter, C, frontend, React, Python, full-stack, and backend projects by Enzo Toniato.' },
-      themes: { light: 'Light' },
-      nav: ['Home', 'About', 'Skills', 'Projects', 'Contact'],
-      home: {
-        available: '<span class="status-dot"></span>Available for new opportunities',
-        title: 'Hello, I am<br><span>Enzo Toniato.</span>',
-        description: 'A full-stack developer building fast, useful digital experiences with personality.',
-        projects: 'Explore projects <span>↗</span>',
-        about: 'About me',
-        stats: ['Year creating', 'Projects', 'Technologies'],
-        profile: { location: 'Location', locationValue: 'Pedreira, SP', specialty: 'Specialty', specialtyValue: 'Full-stack' },
-        terminal: ['<b>const</b> player = {', '&nbsp;&nbsp;role: <i>"Full-Stack Developer"</i>,', '&nbsp;&nbsp;location: <i>"Pedreira, SP"</i>,', '&nbsp;&nbsp;education: <i>"Sesi 356 - Amapro"</i>,', '&nbsp;&nbsp;course: <i>"Senai Jaguariúna · Systems Development"</i>,', '&nbsp;&nbsp;powerUp: <i>"Continuous learning"</i>,', '&nbsp;&nbsp;mission: <i>"Building useful, practical software"</i>', '};']
-      },
-      about: {
-        eyebrow: '01 / About', title: 'A curious mind<br>behind the <span>code.</span>',
-        first: 'I am a developer in constant growth, interested in turning good ideas into products that are simple to use and easy to maintain.',
-        second: 'My journey spans mobile apps, web interfaces, APIs, and databases. I enjoy solving problems with clarity, organization, and attention to detail.',
-        third: 'I also enjoy creating personal, intuitive projects focused on useful experiences. My goal is to help, grow, and stand out in programming through continuous progress in every project.',
-        education: 'I live in Pedreira, São Paulo. I study at Sesi 356 - Amapro and take the Systems Development course at Senai Jaguariúna.',
-        link: 'Open all projects <span>→</span>'
-      },
-      skills: {
-        eyebrow: '02 / Technologies', title: 'My stack and<br><span>tools.</span>', tools: 'Other tools',
-        groups: [['Technologies', 'Languages and frameworks for interfaces and applications.'], ['Backend and data', 'Services, APIs, databases, and local environment.'], ['Tools', 'Tools that support the development workflow.']],
-        cards: [['Mobile', 'Practical experience', 'A framework for cross-platform apps with responsive interfaces and reusable components.'], ['Mobile language', 'Practical experience', 'The language used to create modern, efficient Flutter applications.'], ['Web', 'Practical experience', 'Semantic, accessible structure for web pages and applications.'], ['Web', 'Practical experience', 'Styling, responsive layouts, and visual identity for web interfaces.'], ['Language', 'Practical experience', 'Programming logic, data structures, and structured programming fundamentals.'], ['Language', 'Practical experience', 'Algorithms, programming logic, and scripts in Python.'], ['Web', 'Practical experience', 'Browser interactions, API consumption, and logic for web applications.'], ['Web library', 'Practical experience', 'Interactive web interfaces with reusable components in React.'], ['Backend', 'Practical experience', 'REST APIs, routes, integrations, and backend business rules.'], ['Data', 'Practical experience', 'Relational modeling, SQL queries, and consistent data organization.'], ['Data', 'Practical experience', 'Typed integration between Node.js applications and relational databases.'], ['Backend as a Service', 'Cloud services', 'Authentication, database, and hosting to speed up applications.'], ['Backend as a Service', 'PostgreSQL and APIs', 'A backend with database, authentication, and ready-to-use APIs.'], ['Terminal', 'Command line', 'A terminal for Git commands and version-control workflow organization.'], ['Version control', 'Collaboration', 'Version control, collaboration, and publication of code repositories.'], ['Editor', 'Development environment', 'An editor for development, extensions, and project debugging.'], ['API testing', 'HTTP requests', 'Endpoint testing and REST API validation.'], ['Build tool', 'Modern frontend', 'A build tool for fast and efficient web projects.'], ['Local environment', 'Local server', 'An environment to run and test web applications locally.'], ['Modeling', 'Diagrams', 'Flow, architecture, and entity-relationship diagrams.']]
-      },
-      featured: {
-        eyebrow: '03 / Projects', title: 'Featured<br><span>projects.</span>', all: 'View complete archive <span>↗</span>', details: 'View details <span>→</span>',
-        flutter: 'A Flutter app that looks up addresses by postal code through the ViaCEP API.',
-        whatsapp: 'A coffee shop interface built with React, JavaScript, and Vite.'
-      },
-      contact: { eyebrow: 'Let’s talk', title: 'Have an idea to build?', description: 'Let’s turn your idea into a digital product.', email: 'Email', social: 'You can also find me on' },
-      archive: { eyebrow: 'Projects / 52 selected', title: 'Ideas transformed<br>into <span>digital experiences.</span>', description: 'Projects built with Arduino, C, Flutter, Python, React, and web and backend technologies.', all: 'All', c: 'C', flutter: 'Flutter', frontend: 'Frontend', python: 'Python', react: 'React', fullstack: 'Full-stack', backend: 'Backend', arduino: 'Arduino', hint: 'Hover over a card to see its description.', github: 'View on GitHub', visit: 'Visit website', preview: 'Preview', groups: [['Mobile applications', '18 projects across 20 repositories using Dart, Flutter, and API integrations.'], ['Programming fundamentals', '2 repositories with logic, exercises, and structured programming.'], ['Web experiences', '9 projects with HTML, CSS, JavaScript, React, Vite, and API integration.'], ['Python projects', '5 projects covering algorithms, challenges, and web applications with Flask, FastAPI, and Django.'], ['React interfaces', '2 React application and backend projects.'], ['Complete applications', '11 projects integrating frontend, backend, and data.'], ['APIs and services', '1 backend repository for Flutter integration.'], ['Embedded projects', '4 projects using Arduino, ESP32, sensors, and Wi-Fi communication.']] },
-      cards: [
-        ['Financing', 'An app to simulate financing amounts, installments, and terms.'],
-        ['Flutter Quiz', 'A question-and-answer application with interaction and scoring.'],
-        ['Water Consumption', 'A calculator to track and estimate water consumption.'],
-        ['Vehicle Refueling', 'An app for calculations related to vehicle refueling.'],
-        ['Wire Gauge', 'A tool that supports wire gauge calculations and lookups.'],
-        ['ViaCEP Lookup', 'Address lookup by postal code through the ViaCEP API.'],
-        ['BMI Calculator', 'An app to calculate body mass index quickly.'],
-        ['Walks and Calories', 'An app to estimate calorie burn during walks.'],
-        ['Employees JSON', 'Reading and displaying employee data from JSON.'],
-        ['Splash Screen', 'A launch screen to improve the initial app experience.'],
-        ['Products', 'An app for listing and presenting products.'],
-        ['Walk Photos', 'An app to capture and organize photos taken during walks.'],
-        ['GPS', 'A Flutter app featuring location services and GPS data.'],
-        ['Routes and Maps', 'A navigation project combining native routes and map visualization.'],
-        ['Google Maps and API', 'A project combining Google maps with API consumption and integration.'],
-        ['Flutter Project', 'An application project built with Flutter.'],
-        ['Recipes with API', 'A Flutter recipe app integrated with an API.'],
-        ['C Files', 'A collection of exercises and files developed in the C language.'],
-        ['LOP Repository', 'A repository of Programming Logic course activities in C.'],
-        ['Cafeteria Aroma', 'A coffee shop interface built with JavaScript, React, and Vite.'],
-        ['Pizzaria Sesi', 'A pizza restaurant website with layout and browser interactions.'],
-        ['Truco Cards', 'A card game developed for the browser with JavaScript.'],
-        ['Rock, Paper, Scissors', 'A web version of the classic game built with JavaScript logic.'],
-        ['2026 World Cup Album', 'A web app inspired by a World Cup collectible sticker album.'],
-        ['Dollar Value', 'A web application to look up and display the dollar exchange rate.'],
-        ['Receitas Fullstack API', 'A recipe interface for browsing, creating, editing, and deleting recipes through a REST API.'],
-        ['Python Algorithms', 'A repository of algorithms and exercises in Python.'],
-        ['Books with Flask', 'A book registration project with a web interface and a Flask API.'],
-        ['Python Challenges', 'Programming logic challenges and exercises written in Python.'],
-        ['FastAPI Python', 'An API project developed with Python and FastAPI.'],
-        ['Django Python', 'A web application developed with Python and Django.'],
-        ['Star Wars Galactic Duel', 'A Star Wars themed duel project built with React.'],
-        ['Just in Time', 'A full-stack project built to practice a complete application.'],
-        ['School Evaluation', 'A school evaluation project with an interface and backend.'],
-        ['Hotel Reservations', 'A hotel reservation project with an interface and backend.'],
-        ['Daily Check', 'An application for organizing daily checks and activities.'],
-        ['UltraTech Store', 'An online store project with an interface and backend.'],
-        ['GitParty', 'A full-stack application built to explore frontend and backend integration.'],
-        ['Parking', 'A full-stack system for parking control and management.'],
-        ['Climate Events', 'A web app to record and track user-specific climate events with an interface, API, and database.'],
-        ['Flutter Recipes Backend', 'A recipe backend for integration with a Flutter app.']
-      ]
-    }
-  }
+const translations = {
+  pt: { 'nav.about':'Sobre','nav.skills':'Tecnologias','nav.projects':'Projetos','nav.contact':'Contato','hero.lead':'Enzo Toniato é desenvolvedor full-stack. Interfaces, sistemas e aplicações que não dependem de barulho para serem notadas.','hero.work':'Explorar projetos','hero.contact':'Iniciar contato','hero.caption':'01 — CADA PROJETO, UM NOVO CAPÍTULO','about.label':'PERFIL / MANIFESTO','about.title':'Menos ruído.<br><em>Mais execução.</em>','about.first':'Transformo ideias em produtos digitais diretos, funcionais e fáceis de usar. Minha abordagem combina visual preciso, lógica bem resolvida e atenção ao que acontece além da interface.','about.second':'Atuo entre aplicações mobile, front-end, APIs e dados. Estudo Desenvolvimento de Sistemas no Senai Jaguariúna e construo projetos para evoluir na prática.','about.base':'BASE','about.focus':'FOCO','about.status':'STATUS','about.building':'Em construção','skills.label':'TECNOLOGIAS / TECH STACK','skills.title':'Tecnologias<br><em>na prática.</em>','projects.label':'SELEÇÃO / 2026','projects.title':'Projetos que<br><em>deixam marca.</em>','projects.sabore':'Experiência digital desenvolvida em equipe como projeto de conclusão.','projects.zenkai':'Experiência casual de entretenimento para web.','projects.open':'Abrir projeto ↗','projects.archive':'EXPLORAR TODOS OS PROJETOS','contact.label':'FIM DO CAPÍTULO / PRÓXIMO MOVIMENTO','contact.title':'Vamos construir<br><em>algo memorável.</em>','archive.back':'← Voltar ao início','archive.label':'ARQUIVO / TODOS OS TRABALHOS','archive.title':'Obras em<br><em>andamento.</em>','archive.description':'Uma seleção organizada de projetos em mobile, web, backend, dados, C e IoT.','filter.all':'Tudo','archive.count':'PROJETOS /','archive.complete':'ARQUIVO COMPLETO','archive.repository':'REPOSITÓRIO','archive.view':'VER ↗' },
+  en: { 'nav.about':'About','nav.skills':'Technologies','nav.projects':'Projects','nav.contact':'Contact','hero.lead':'Enzo Toniato is a full-stack developer. Interfaces, systems, and applications that do not need noise to be noticed.','hero.work':'Explore projects','hero.contact':'Get in touch','hero.caption':'01 — EVERY PROJECT, A NEW CHAPTER','about.label':'PROFILE / MANIFESTO','about.title':'Less noise.<br><em>More execution.</em>','about.first':'I turn ideas into direct, functional, and easy-to-use digital products. My approach combines precise visuals, well-resolved logic, and attention to what happens beyond the interface.','about.second':'I work across mobile applications, front-end, APIs, and data. I study Systems Development at Senai Jaguariúna and build projects to develop through practice.','about.base':'BASE','about.focus':'FOCUS','about.status':'STATUS','about.building':'In progress','skills.label':'TECHNOLOGIES / TECH STACK','skills.title':'Technologies<br><em>in practice.</em>','projects.label':'SELECTION / 2026','projects.title':'Projects that<br><em>leave a mark.</em>','projects.sabore':'A digital experience developed as a collaborative graduation project.','projects.zenkai':'A casual web entertainment experience.','projects.open':'Open project ↗','projects.archive':'EXPLORE ALL PROJECTS','contact.label':'END OF CHAPTER / NEXT MOVE','contact.title':'Let’s build<br><em>something memorable.</em>','archive.back':'← Back to home','archive.label':'ARCHIVE / ALL WORK','archive.title':'Works in<br><em>progress.</em>','archive.description':'An organized selection of mobile, web, backend, data, C, and IoT projects.','filter.all':'All','archive.count':'PROJECTS /','archive.complete':'FULL ARCHIVE','archive.repository':'REPOSITORY','archive.view':'VIEW ↗' }
 };
 
-resources.pt.translation.skills.cards.splice(13, 0, ['Dados', 'Banco de dados NoSQL', 'Banco de dados orientado a documentos para aplicações modernas.']);
-resources.en.translation.skills.cards.splice(13, 0, ['Data', 'NoSQL database', 'A document database for modern applications.']);
-resources.pt.translation.skills.cards.push(['IDE', 'Desenvolvimento embarcado', 'Ambiente para programar placas Arduino e ESP32.']);
-resources.en.translation.skills.cards.push(['IDE', 'Embedded development', 'An environment for programming Arduino and ESP32 boards.']);
-resources.pt.translation.cards.push(
-  ['Flutter Home Widget', 'Aplicativo Flutter com um widget para exibir informações direto na tela inicial do dispositivo.'],
-  ['Enem Dev', 'Projeto web com conteúdos e atividades para apoiar os estudos para o Enem.'],
-  ['Arduino IDE', 'Exercícios e projetos desenvolvidos com Arduino IDE.'],
-  ['ESP32 Wi-Fi e Motor', 'Controle de motor serial conectado por Wi-Fi com uma placa ESP32.'],
-  ['Sensores com ESP32', 'Projeto de leitura e integração de sensores usando ESP32.'],
-  ['Prepara Saep', 'Projeto educacional criado para apoiar a preparação para a avaliação Saep.'],
-  ['MongoDB', 'Repositório com estudos e prática de banco de dados MongoDB.']
-);
-resources.en.translation.cards.push(
-  ['Flutter Home Widget', 'A Flutter app with a widget that displays information on the device home screen.'],
-  ['Enem Dev', 'A web project with content and activities to support Enem exam preparation.'],
-  ['Arduino IDE', 'Exercises and projects developed with the Arduino IDE.'],
-  ['ESP32 Wi-Fi and Motor', 'Serial motor control connected over Wi-Fi with an ESP32 board.'],
-  ['ESP32 Sensors', 'A project for reading and integrating sensors with an ESP32.'],
-  ['Prepara Saep', 'An educational project to support preparation for the Saep assessment.'],
-  ['MongoDB', 'A repository for MongoDB database study and practice.']
-);
 
-resources.pt.translation.cards.push(
-  ['Atividade IoT', 'Projeto de Internet das Coisas desenvolvido com microcontroladores.'],
-  ['Backend React', 'Projeto backend associado ao ecossistema React.'],
-  ['Saboré', 'Projeto de conclusão de curso desenvolvido em equipe.']
-);
-resources.en.translation.cards.push(
-  ['IoT Activity', 'An Internet of Things project developed with microcontrollers.'],
-  ['React Backend', 'A backend project associated with the React ecosystem.'],
-  ['Saboré', 'A team project developed as a capstone.']
-);
-
-resources.pt.translation.featured.sabore = 'Projeto de conclusão de curso desenvolvido em equipe, com uma experiência digital para o Saboré.';
-resources.pt.translation.featured.zenkai = 'Site casual de entretenimento com acesso às experiências Zenkai.';
-resources.en.translation.featured.sabore = 'A team capstone project delivering a digital experience for Saboré.';
-resources.en.translation.featured.zenkai = 'A casual entertainment site with access to the Zenkai experiences.';
-resources.pt.translation.cards.push(['Zenkai', 'Site casual de entretenimento com duas experiências Zenkai.']);
-resources.en.translation.cards.push(['Zenkai', 'A casual entertainment site with two Zenkai experiences.']);
-
-document.addEventListener('DOMContentLoaded', async () => {
-  const menuButton = document.querySelector('.menu-toggle');
-  const navigation = document.querySelector('.site-nav');
-  const themeSelector = document.getElementById('theme-selector');
-  const languageSelector = document.getElementById('language-selector');
-  const setText = (selector, value) => document.querySelectorAll(selector).forEach((element) => { element.textContent = value; });
-  const setHtml = (selector, value) => document.querySelectorAll(selector).forEach((element) => { element.innerHTML = value; });
-
-  if (themeSelector) {
-    themeSelector.options[0].textContent = 'Emerald';
-    themeSelector.options[1].textContent = 'Cyan';
-  }
-
-  const applyTheme = (theme) => {
-    document.documentElement.dataset.theme = theme;
-    if (themeSelector) themeSelector.value = theme;
-    localStorage.setItem('portfolio-theme', theme);
-  };
-
-  applyTheme(localStorage.getItem('portfolio-theme') || 'forest');
-  themeSelector?.addEventListener('change', (event) => applyTheme(event.target.value));
-
-  if (menuButton && navigation) {
-    menuButton.addEventListener('click', () => {
-      const isOpen = navigation.classList.toggle('is-open');
-      menuButton.classList.toggle('is-open', isOpen);
-      menuButton.setAttribute('aria-expanded', String(isOpen));
-    });
-    navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-      navigation.classList.remove('is-open');
-      menuButton.classList.remove('is-open');
-      menuButton.setAttribute('aria-expanded', 'false');
-    }));
-  }
-
-  const revealItems = document.querySelectorAll('[data-reveal]');
-  const revealObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      revealObserver.unobserve(entry.target);
-    }
-  }), { threshold: 0.12 });
-  revealItems.forEach((item) => revealObserver.observe(item));
-
-  const profileImage = document.querySelector('.profile-image');
-  profileImage?.addEventListener('error', () => profileImage.classList.add('is-unavailable'));
-
-  const skillDetails = [
-    'Framework para aplicativos multiplataforma com interfaces responsivas e componentes reutilizáveis.',
-    'Linguagem utilizada para criar aplicativos modernos e eficientes com Flutter.',
-    'Estrutura semântica e acessível para páginas e aplicações web.',
-    'Estilização, layouts responsivos e identidade visual para interfaces web.',
-    'Fundamentos de lógica, estruturas de dados e programação estruturada.',
-    'Algoritmos, lógica de programação e scripts em Python.',
-    'Interações no navegador, consumo de APIs e lógica para aplicações web.',
-    'Interfaces web interativas com componentes reutilizáveis em React.',
-    'APIs REST, rotas, integrações e regras de negócio no backend.',
-    'Modelagem relacional, consultas SQL e organização consistente de dados.',
-    'Integração tipada entre aplicações Node.js e bancos de dados relacionais.'
-  ];
-  document.querySelectorAll('.skill-card').forEach((card, index) => {
-    const content = card.querySelector('div');
-    if (content && !content.querySelector('.skill-detail')) {
-      const detail = document.createElement('small');
-      detail.className = 'skill-detail';
-      detail.textContent = skillDetails[index];
-      content.appendChild(detail);
-    }
+Object.assign(translations.pt, {
+ 'projects.neondb':'Código, estudos e desenvolvimento do projeto Neon DB.',
+ 'hero.title':'CÓDIGO<br><em>COM</em><br>PROPÓSITO.', 'hero.scroll':'EXPLORE O PRÓXIMO CAPÍTULO',
+ 'about.first':'Sou um desenvolvedor em evolução constante, interessado em transformar boas ideias em produtos simples de usar e fáceis de manter.',
+ 'about.second':'Minha jornada passa por aplicativos mobile, interfaces web, APIs e bancos de dados. Gosto de resolver problemas com clareza, organização e atenção aos detalhes.',
+ 'about.third':'Também gosto de criar projetos pessoais e intuitivos, pensando em experiências úteis para quem vai utilizá-los. Meu objetivo é contribuir e me destacar na área da programação, evoluindo a cada projeto.',
+ 'about.education.label':'FORMAÇÃO','about.education':'SESI 356 — Amparo / SENAI Jaguariúna',
+ 'about.code.role':'Desenvolvedor Full-Stack','about.code.location':'Pedreira, SP','about.code.education':'SESI 356 - Amparo',
+ 'about.code.course':'Desenvolvimento de Sistemas - SENAI Jaguariúna','about.code.powerup':'Aprendizado contínuo','about.code.mission':'Desenvolver softwares úteis e práticos',
+ 'skill.3':'Dados','skill.4':'Embarcados','skill.5':'Ferramentas','skip':'Ir para o conteúdo',
+ 'preview':'Preview ↗','footer':'FEITO COM PROPÓSITO','footer.archive':'ARQUIVO ABERTO',
+ 'footer.role':'Desenvolvedor full-stack','footer.navigate':'NAVEGAR','footer.connect':'CONECTAR','footer.top':'VOLTAR AO TOPO',
+ 'search.label':'BUSCAR NO ARQUIVO','search.placeholder':'Nome, tecnologia ou categoria…',
+ 'empty':'Nenhum projeto encontrado. Tente outro termo ou categoria.','reset':'Limpar busca e filtros',
+ 'theme.ink':'Preto','theme.paper':'Branco','theme.stripe':'Contornos','theme.label':'Escolher tema',
+ 'language.label':'Escolher idioma','filter.label':'Filtrar projetos','menu.open':'Abrir menu','menu.close':'Fechar menu',
+ 'title.home':'Enzo Toniato — Desenvolvedor full-stack','title.archive':'Projetos — Enzo Toniato',
+ 'meta.home':'Portfólio de Enzo Toniato: projetos web, mobile, APIs e dados.',
+ 'meta.archive':'Explore projetos de Enzo Toniato por tecnologia e categoria.',
+ 'capstone':'TCC / FULL-STACK / 01','repository':'GitHub ↗','visit':'Visitar site ↗',
+ 'contact.intro':'Disponível para projetos, oportunidades e novas ideias. Escolha o canal que preferir.',
+ 'contact.email':'E-MAIL','contact.message':'MENSAGEM','contact.code':'CÓDIGO','contact.code.secondary':'CÓDIGO SECUNDÁRIO','contact.network':'REDE PROFISSIONAL'
+});
+Object.assign(translations.en, {
+ 'projects.neondb':'Source code, studies and development of the Neon DB project.',
+ 'hero.title':'CODE<br><em>WITH</em><br>INTENT.', 'hero.scroll':'EXPLORE THE NEXT CHAPTER',
+ 'about.first':'I am a developer who is always learning, interested in turning good ideas into products that are easy to use and maintain.',
+ 'about.second':'My journey spans mobile apps, web interfaces, APIs, and databases. I enjoy solving problems with clarity, organization, and attention to detail.',
+ 'about.third':'I also enjoy creating personal, intuitive projects and useful experiences. My goal is to contribute and grow in software development, improving with every project.',
+ 'about.education.label':'EDUCATION','about.education':'SESI 356 — Amparo / SENAI Jaguariúna',
+ 'about.code.role':'Full-Stack Developer','about.code.location':'Pedreira, SP','about.code.education':'SESI 356 - Amparo',
+ 'about.code.course':'Systems Development - SENAI Jaguariúna','about.code.powerup':'Continuous learning','about.code.mission':'Building useful, practical software',
+ 'skill.3':'Data','skill.4':'Embedded','skill.5':'Tools','skip':'Skip to content',
+ 'preview':'Preview ↗','footer':'BUILT WITH INTENT','footer.archive':'OPEN ARCHIVE',
+ 'footer.role':'Full-stack developer','footer.navigate':'EXPLORE','footer.connect':'CONNECT','footer.top':'BACK TO TOP',
+ 'search.label':'SEARCH THE ARCHIVE','search.placeholder':'Name, technology or category…',
+ 'empty':'No projects found. Try another term or category.','reset':'Clear search and filters',
+ 'theme.ink':'Black','theme.paper':'White','theme.stripe':'Outlines','theme.label':'Choose theme',
+ 'language.label':'Choose language','filter.label':'Filter projects','menu.open':'Open menu','menu.close':'Close menu',
+ 'title.home':'Enzo Toniato — Full-stack developer','title.archive':'Projects — Enzo Toniato',
+ 'meta.home':'Enzo Toniato’s portfolio: web, mobile, API and data projects.',
+ 'meta.archive':'Explore Enzo Toniato’s projects by technology and category.',
+ 'capstone':'CAPSTONE / FULL-STACK / 01','repository':'GitHub ↗','visit':'Visit site ↗',
+ 'contact.intro':'Available for projects, opportunities and new ideas. Choose the channel you prefer.',
+ 'contact.email':'EMAIL','contact.message':'MESSAGE','contact.code':'CODE','contact.code.secondary':'SECONDARY CODE','contact.network':'PROFESSIONAL NETWORK'
+});
+const escapeHtml = (value) => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const techMarkup = (names) => names.filter(name => techAssets[name]).map(name =>
+ '<span class="tech-chip"><img src="assets/'+techAssets[name]+'" alt="" width="22" height="22" loading="lazy"><span>'+escapeHtml(name)+'</span></span>'
+).join('');
+const preference = {
+ get(key) { try { return localStorage.getItem(key); } catch { return null; } },
+ set(key,value) { try { localStorage.setItem(key,value); } catch { /* Private browsing may disable storage. */ } }
+};
+document.addEventListener('DOMContentLoaded', () => {
+ const root=document.body, list=document.querySelector('#project-list'), search=document.querySelector('#project-search');
+ const menu=document.querySelector('.menu-button'), nav=document.querySelector('.navigation');
+ let language=preference.get('enzo-language') || preference.get('portfolio-language') || 'pt';
+ if(!translations[language]) language='pt';
+ let filter='all';
+ const t=key=>translations[language][key]||key;
+ const fold=value=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ const setTheme=(value)=>{
+  const theme=['ink','paper','stripe'].includes(value)?value:'ink';
+  root.dataset.theme=theme;preference.set('enzo-theme',theme);
+  document.querySelectorAll('[data-theme-option]').forEach(b=>{
+   const selected=b.dataset.themeOption===theme;
+   b.classList.toggle('is-selected',selected);b.setAttribute('aria-pressed',String(selected));
   });
-
-  const filterButtons = document.querySelectorAll('[data-filter]');
-  const projectCards = document.querySelectorAll('[data-category]');
-  const projectGroups = document.querySelectorAll('[data-project-group]');
-  filterButtons.forEach((button) => button.addEventListener('click', () => {
-    const filter = button.dataset.filter;
-    filterButtons.forEach((item) => item.classList.toggle('active', item === button));
-    projectCards.forEach((card) => { card.hidden = !(filter === 'all' || card.dataset.category === filter); });
-    projectGroups.forEach((group) => { group.hidden = !(filter === 'all' || group.dataset.projectGroup === filter); });
-  }));
-
-  document.querySelectorAll('#year').forEach((year) => { year.textContent = new Date().getFullYear(); });
-
-  if (!window.i18next) return;
-
-  await window.i18next.init({ resources, lng: localStorage.getItem('portfolio-language') || 'pt', fallbackLng: 'pt', interpolation: { escapeValue: false } });
-
-  const applyLanguage = (language) => {
-    window.i18next.changeLanguage(language);
-    document.documentElement.lang = language === 'en' ? 'en' : 'pt-BR';
-    if (languageSelector) languageSelector.value = language;
-    localStorage.setItem('portfolio-language', language);
-    const t = window.i18next.t.bind(window.i18next);
-    const isProjectsPage = Boolean(document.querySelector('.archive-hero'));
-    document.title = t(isProjectsPage ? 'page.projectsTitle' : 'page.homeTitle');
-    const description = document.querySelector('meta[name="description"]');
-    if (description) description.content = t(isProjectsPage ? 'page.projectsDescription' : 'page.homeDescription');
-    if (menuButton) menuButton.setAttribute('aria-label', t('controls.menu'));
-    document.querySelectorAll('[data-i18n]').forEach((element) => { element.textContent = t(element.dataset.i18n); });
-    document.querySelectorAll('.site-nav').forEach((nav) => nav.querySelectorAll('a').forEach((link, index) => { link.textContent = t(`nav.${index}`); }));
-    if (document.querySelector('.hero')) {
-      setHtml('.hero-copy .eyebrow', t('home.available'));
-      setHtml('.hero h1', t('home.title'));
-      setText('.hero-text', t('home.description'));
-      setHtml('.hero-actions .button-primary', t('home.projects'));
-      setText('.hero-actions .button-ghost', t('home.about'));
-      document.querySelectorAll('.hero-stats dd').forEach((item, index) => { item.textContent = t(`home.stats.${index}`); });
-      const profileDetails = document.querySelectorAll('.profile-card-bottom div');
-      if (profileDetails[0]) {
-        profileDetails[0].querySelector('small').textContent = t('home.profile.location');
-        profileDetails[0].querySelector('strong').textContent = t('home.profile.locationValue');
-      }
-      if (profileDetails[1]) {
-        profileDetails[1].querySelector('small').textContent = t('home.profile.specialty');
-        profileDetails[1].querySelector('strong').textContent = t('home.profile.specialtyValue');
-      }
-      document.querySelectorAll('.terminal-content p').forEach((line, index) => { line.innerHTML = t(`home.terminal.${index}`); });
-      setText('.about-section .section-heading .eyebrow', t('about.eyebrow'));
-      setHtml('.about-section .section-heading h2', t('about.title'));
-      const aboutParagraphs = document.querySelectorAll('.about-copy p');
-      setText('.about-copy p:nth-of-type(1)', t('about.first'));
-      if (aboutParagraphs[1]) aboutParagraphs[1].textContent = t('about.second');
-      if (aboutParagraphs[2]) aboutParagraphs[2].textContent = t('about.third');
-      if (aboutParagraphs[3]) aboutParagraphs[3].textContent = t('about.education');
-      setHtml('.about-copy .text-link', t('about.link'));
-      setText('.skills-section .section-heading .eyebrow', t('skills.eyebrow'));
-      setHtml('.skills-section .section-heading h2', t('skills.title'));
-      document.querySelectorAll('.skill-group').forEach((group, index) => {
-        const values = t(`skills.groups.${index}`, { returnObjects: true });
-        if (!Array.isArray(values)) return;
-        group.querySelector('p').textContent = values[0];
-        group.querySelector('span').textContent = values[1];
-      });
-      document.querySelectorAll('.skill-card').forEach((card, index) => {
-        const values = t(`skills.cards.${index}`, { returnObjects: true });
-        if (!Array.isArray(values)) return;
-        card.querySelector('div > p').textContent = values[0];
-        card.querySelector('.skill-level').textContent = values[1];
-        let detail = card.querySelector('.skill-detail');
-        if (!detail) {
-          detail = document.createElement('small');
-          detail.className = 'skill-detail';
-          card.querySelector('div').appendChild(detail);
-        }
-        detail.textContent = values[2];
-      });
-      setText('.projects-heading .section-heading .eyebrow', t('featured.eyebrow'));
-      setHtml('.projects-heading .section-heading h2', t('featured.title'));
-      setHtml('.projects-heading > .button', t('featured.all'));
-      const featuredDescriptions = document.querySelectorAll('.project-content > p:not(.project-kicker)');
-      if (featuredDescriptions[0]) featuredDescriptions[0].textContent = t('featured.sabore');
-      if (featuredDescriptions[1]) featuredDescriptions[1].textContent = t('featured.zenkai');
-      document.querySelectorAll('.project-content a').forEach((link) => {
-        const label = link.href.includes('github.com') ? t('archive.github') : link.href.includes('zenkai-add.vercel.app') ? t('archive.preview') : t('archive.visit');
-        link.innerHTML = `${label} <span>↗</span>`;
-      });
-      setText('.contact-card .eyebrow', t('contact.eyebrow'));
-      setText('.contact-card h2', t('contact.title'));
-      setText('.contact-card > p:not(.eyebrow)', t('contact.description'));
-      setText('.contact-action:first-child small', t('contact.email'));
-      setText('.social-links > span', t('contact.social'));
-    }
-    if (document.querySelector('.archive-hero')) {
-      setText('.archive-hero .eyebrow', t('archive.eyebrow'));
-      setHtml('.archive-hero h1', t('archive.title'));
-      setText('.archive-hero > p:not(.eyebrow)', t('archive.description'));
-      const filterBar = document.querySelector('.filter-bar');
-      if (filterBar) filterBar.setAttribute('aria-label', t('controls.projectFilter'));
-      ['all', 'c', 'flutter', 'frontend', 'python', 'react', 'fullstack', 'backend', 'arduino'].forEach((key) => setText(`[data-filter="${key}"]`, t(`archive.${key}`)));
-      setText('.filter-hint', t('archive.hint'));
-      document.querySelectorAll('.project-group').forEach((group) => {
-        const heading = group.dataset.translationHeading || group.querySelector('h2').textContent;
-        group.dataset.translationHeading = heading;
-        const index = resources.pt.translation.archive.groups.findIndex(([title]) => title === heading);
-        const values = t(`archive.groups.${index}`, { returnObjects: true });
-        if (!Array.isArray(values)) return;
-        group.querySelector('h2').textContent = values[0];
-        group.querySelector('span').textContent = values[1];
-      });
-      document.querySelectorAll('.archive-card').forEach((card) => {
-        const originalTitle = card.dataset.translationTitle || card.querySelector('h2').textContent;
-        card.dataset.translationTitle = originalTitle;
-        const index = resources.pt.translation.cards.findIndex(([title]) => title === originalTitle);
-        const values = t(`cards.${index}`, { returnObjects: true });
-        const title = card.querySelector('h2');
-        const description = card.querySelector('.archive-card-details p');
-        if (title && Array.isArray(values)) title.textContent = values[0];
-        if (description && Array.isArray(values)) description.textContent = values[1];
-      });
-      document.querySelectorAll('.project-tree-card').forEach((card) => {
-        const title = card.querySelector('h2')?.textContent;
-        const tree = card.querySelector('.repo-tree');
-        const root = card.querySelector('.repo-tree-root');
-        if (title && root) root.textContent = title;
-        if (title && tree) tree.setAttribute('aria-label', language === 'en' ? `Repositories for ${title}` : `Repositórios do projeto ${title}`);
-      });
-      document.querySelectorAll('.archive-card .archive-card-details > a, .archive-card .card-links a').forEach((link) => {
-        const key = link.href.includes('github.com') ? 'archive.github' : link.href.includes('zenkai-add.vercel.app') ? 'archive.preview' : 'archive.visit';
-        link.innerHTML = `${t(key)} <span>↗</span>`;
-      });
-      setText('[data-category="c"] .project-kicker', language === 'en' ? 'C LANGUAGE' : 'LINGUAGEM C');
-    }
-    setText('.ai-notice', language === 'en' ? 'This portfolio contains AI-generated components.' : 'Este portfólio contém componentes gerados por IA.');
-  };
-
-  applyLanguage(window.i18next.language);
-  languageSelector?.addEventListener('change', (event) => applyLanguage(event.target.value));
+ };
+ setTheme(preference.get('enzo-theme')||'ink');
+ document.querySelectorAll('[data-theme-option]').forEach(b=>b.addEventListener('click',()=>setTheme(b.dataset.themeOption)));
+ document.querySelectorAll('[data-tech]').forEach(el=>el.innerHTML=techMarkup(el.dataset.tech.split('|')));
+ document.querySelectorAll('[data-total-projects]').forEach(el=>el.textContent=projectCatalog.length);
+ document.querySelectorAll('#year').forEach(el=>el.textContent=new Date().getFullYear());
+ const closeMenu=()=>{nav?.classList.remove('is-open');menu?.setAttribute('aria-expanded','false');menu?.setAttribute('aria-label',t('menu.open'));};
+ menu?.addEventListener('click',()=>{
+  const open=nav.classList.toggle('is-open');menu.setAttribute('aria-expanded',String(open));
+  menu.setAttribute('aria-label',t(open?'menu.close':'menu.open'));
+ });
+ nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();if(document.activeElement?.closest('.navigation')) menu?.focus();}});
+ document.addEventListener('click',e=>{if(!e.target.closest('.masthead')) closeMenu();});
+ const render=()=>{
+  if(!list)return;
+  const query=fold(search?.value||'');
+  const visible=projectCatalog.filter(p=>(filter==='all'||p.category===filter)&&fold([p.title.pt,p.title.en,p.category,...p.tech].join(' ')).includes(query));
+  document.querySelector('#project-count').textContent=String(visible.length).padStart(2,'0')+' '+t('archive.count')+' '+(filter==='all'?t('archive.complete'):filter.toUpperCase());
+  list.innerHTML=visible.map(p=>{
+   const index=projectCatalog.indexOf(p)+1;
+   const links=p.links.map(url=>'<a href="'+escapeHtml(url)+'" target="_blank" rel="noopener noreferrer">'+(url.includes('github.com/')?t('repository'):url.includes('zenkai-add')?t('preview'):t('visit'))+'</a>').join('');
+   return '<article class="project-card"><div class="project-top"><img class="project-icon" src="'+escapeHtml(p.icon)+'" alt="" width="36" height="36" loading="lazy"><span class="project-number">'+String(index).padStart(2,'0')+'</span><span class="category-label">'+escapeHtml(p.category)+'</span><span aria-hidden="true">↗</span></div><h2>'+escapeHtml(p.title[language]||p.title.pt)+'</h2><p class="project-description">'+escapeHtml(p.description[language]||p.description.pt)+'</p><div class="tech-list">'+techMarkup(p.tech)+'</div><div class="card-links">'+links+'</div></article>';
+  }).join('');
+  if(!visible.length){
+   const empty=document.createElement('div');empty.className='empty-state';
+   const message=document.createElement('p');message.textContent=t('empty');
+   const reset=document.createElement('button');reset.textContent=t('reset');reset.addEventListener('click',()=>{
+    filter='all';search.value='';updateFilters();render();search.focus();
+   });empty.append(message,reset);list.append(empty);
+  }
+ };
+ const updateFilters=()=>document.querySelectorAll('[data-filter]').forEach(b=>{
+  const selected=b.dataset.filter===filter;b.classList.toggle('is-active',selected);b.setAttribute('aria-pressed',String(selected));
+ });
+ const applyLanguage=value=>{
+  language=value;preference.set('enzo-language',value);document.documentElement.lang=value==='pt'?'pt-BR':'en';
+  document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>el.innerHTML=t(el.dataset.i18nHtml));
+  document.querySelectorAll('[data-placeholder]').forEach(el=>el.placeholder=t(el.dataset.placeholder));
+  document.querySelectorAll('[data-language]').forEach(b=>{b.classList.toggle('is-selected',b.dataset.language===value);b.setAttribute('aria-pressed',String(b.dataset.language===value));});
+  document.querySelectorAll('[data-theme-option]').forEach(b=>{b.textContent=t('theme.'+b.dataset.themeOption);b.title=b.textContent;});
+  document.querySelector('.theme-switcher')?.setAttribute('aria-label',t('theme.label'));
+  document.querySelector('.language-switcher')?.setAttribute('aria-label',t('language.label'));
+  document.querySelector('.filter-row')?.setAttribute('aria-label',t('filter.label'));
+  menu?.setAttribute('aria-label',t(menu.getAttribute('aria-expanded')==='true'?'menu.close':'menu.open'));
+  document.title=t(list?'title.archive':'title.home');
+  document.querySelector('meta[name="description"]').content=t(list?'meta.archive':'meta.home');
+  render();
+ };
+ document.querySelectorAll('[data-language]').forEach(b=>b.addEventListener('click',()=>applyLanguage(b.dataset.language)));
+ document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;updateFilters();render();}));
+ search?.addEventListener('input',render);
+ updateFilters();applyLanguage(language);
+ // Active section tracking does not hide content or interfere with keyboard navigation.
+ if(nav && 'IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+   if(entry.isIntersecting)nav.querySelectorAll('a').forEach(a=>{
+    const current=a.hash==='#'+entry.target.id;
+    if(current)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');
+   });
+  }),{rootMargin:'-15% 0px -55% 0px'});
+  document.querySelectorAll('main section[id]').forEach(section=>observer.observe(section));
+ }
 });

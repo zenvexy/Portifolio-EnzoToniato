@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "node scripts/copy-i18next.cjs"
+    "build": "node scripts/check-site.cjs"
   },
   "dependencies": {
     "i18next": "^26.4.2"

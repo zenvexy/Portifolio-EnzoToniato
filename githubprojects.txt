@@ -76,6 +76,9 @@ https://github.com/zenvexy/UltraTech-Store.git
 https://github.com/zenvexy/Eventos-Climaticos.git
 https://github.com/zenvexy/Prepara-Saep.git
 https://github.com/zenvexy/MongoDB.git
+https://github.com/zenvexy/Media-Bimestral.git
+https://github.com/zenvexy/RestaurantPlus.git
+https://github.com/zenvexy/NeonDb.git
 
 c
 
