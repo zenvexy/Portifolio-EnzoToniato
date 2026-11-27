@@ -58,6 +58,8 @@ https://github.com/zenvexy/FastAPI-Python.git
 - https://zenvexy.github.io/FastAPI-Python
 https://github.com/zenvexy/Django-Python.git
 - https://zenvexy.github.io/Django-Python
+https://github.com/zenvexy/CineList-Python.git
+- https://zenvexy.github.io/CineList-Python
 
 react 
 

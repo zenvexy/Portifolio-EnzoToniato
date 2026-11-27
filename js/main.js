@@ -56,8 +56,34 @@ const techMarkup = (names) => names.filter(name => techAssets[name]).map(name =>
 ).join('');
 const preference = {
  get(key) { try { return localStorage.getItem(key); } catch { return null; } },
- set(key,value) { try { localStorage.setItem(key,value); } catch { /* Private browsing may disable storage. */ } }
+ set(key,value) { try { localStorage.setItem(key,value); } catch {} }
 };
+
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+const scrollKey = 'portfolio-scroll:' + location.pathname;
+const saveScrollPosition = () => {
+ try { sessionStorage.setItem(scrollKey, String(window.scrollY)); } catch {}
+};
+const restoreScrollPosition = () => {
+ let saved;
+ try { saved = Number(sessionStorage.getItem(scrollKey)); } catch { return; }
+ if (!Number.isFinite(saved) || saved < 0) return;
+ const previousBehavior = document.documentElement.style.scrollBehavior;
+ document.documentElement.style.scrollBehavior = 'auto';
+ window.scrollTo(0, saved);
+ document.documentElement.style.scrollBehavior = previousBehavior;
+};
+
+window.addEventListener('scroll', saveScrollPosition, { passive: true });
+window.addEventListener('pagehide', saveScrollPosition);
+window.addEventListener('beforeunload', saveScrollPosition);
+document.addEventListener('DOMContentLoaded', () => {
+ requestAnimationFrame(restoreScrollPosition);
+ requestAnimationFrame(() => requestAnimationFrame(restoreScrollPosition));
+});
+window.addEventListener('pageshow', restoreScrollPosition);
+
 document.addEventListener('DOMContentLoaded', () => {
  const root=document.body, list=document.querySelector('#project-list'), search=document.querySelector('#project-search');
  const menu=document.querySelector('.menu-button'), nav=document.querySelector('.navigation');
@@ -127,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
  document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;updateFilters();render();}));
  search?.addEventListener('input',render);
  updateFilters();applyLanguage(language);
- // Active section tracking does not hide content or interfere with keyboard navigation.
  if(nav && 'IntersectionObserver' in window){
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
    if(entry.isIntersecting)nav.querySelectorAll('a').forEach(a=>{

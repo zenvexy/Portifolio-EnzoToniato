@@ -1,4 +1,3 @@
-/* Catalog reconciled with the original portfolio and githubprojects.txt. */
 const projectCatalog = [
   {
     "title": {
@@ -732,6 +731,27 @@ const projectCatalog = [
     },
     "tech": [
       "Python"
+    ],
+    "icon": "assets/python.png"
+  },
+  {
+    "title": {
+      "pt": "CineList",
+      "en": "CineList"
+    },
+    "category": "python",
+    "links": [
+      "https://github.com/zenvexy/CineList-Python",
+      "https://zenvexy.github.io/CineList-Python"
+    ],
+    "description": {
+      "pt": "Aplicação para gerenciar filmes e séries, com API em FastAPI e dados no PostgreSQL via Prisma e NeonDB.",
+      "en": "An application for managing movies and series, with a FastAPI API and PostgreSQL data through Prisma and NeonDB."
+    },
+    "tech": [
+      "Python",
+      "Prisma",
+      "Neon DB"
     ],
     "icon": "assets/python.png"
   },
