@@ -5,6 +5,13 @@ const translations = {
 
 
 Object.assign(translations.pt, {
+ 'nav.extensions':'Extensões',
+ 'extensions.label':'ECOSSISTEMA / VS CODE','extensions.title':'Extensões que<br><em>personalizam.</em>',
+ 'extensions.hells':'Coleção com quatro temas escuros inspirados em Hell\'s Paradise: Gabimaru, Sagiri, Yuzuriha e Tao Fa, além de ícones de produto exclusivos.',
+ 'extensions.ddlc':'Quatro temas escuros com Monika, Sayori, Natsuki e Yuri, ícones literários, chibis, diálogos interativos e poemas em múltiplos idiomas.',
+ 'extensions.nocturne':'Coleção com dez temas escuros inspirados em cidades à noite, reunindo neon, chuva, portos, lanternas, névoa e arquitetura gótica.',
+ 'extensions.fantasy':'Três temas sombrios — Vespergrim, Myrkwood e Noxthar — com paletas de grimórios, alquimia e magia espectral, além de ícones pixel art.',
+ 'extensions.zenkai':'Ecossistema neon com onze variantes escuras, superfícies translúcidas e contraste ajustado para criar uma experiência de código vibrante e autoral.',
  'projects.neondb':'Código, estudos e desenvolvimento do projeto Neon DB.',
  'hero.title':'CÓDIGO<br><em>COM</em><br>PROPÓSITO.', 'hero.scroll':'EXPLORE O PRÓXIMO CAPÍTULO',
  'about.first':'Sou um desenvolvedor em evolução constante, interessado em transformar boas ideias em produtos simples de usar e fáceis de manter.',
@@ -28,6 +35,13 @@ Object.assign(translations.pt, {
  'contact.email':'E-MAIL','contact.message':'MENSAGEM','contact.code':'CÓDIGO','contact.code.secondary':'CÓDIGO SECUNDÁRIO','contact.network':'REDE PROFISSIONAL'
 });
 Object.assign(translations.en, {
+ 'nav.extensions':'Extensions',
+ 'extensions.label':'ECOSYSTEM / VS CODE','extensions.title':'Extensions that<br><em>personalize.</em>',
+ 'extensions.hells':'A collection of four dark themes inspired by Hell\'s Paradise: Gabimaru, Sagiri, Yuzuriha, and Tao Fa, plus exclusive product icons.',
+ 'extensions.ddlc':'Four dark themes featuring Monika, Sayori, Natsuki, and Yuri, literary icons, chibis, interactive dialogues, and poems in multiple languages.',
+ 'extensions.nocturne':'A collection of ten dark themes inspired by cities at night, combining neon, rain, harbors, lanterns, fog, and gothic architecture.',
+ 'extensions.fantasy':'Three dark-fantasy themes—Vespergrim, Myrkwood, and Noxthar—with grimoire, alchemy, and spectral-magic palettes, plus pixel-art icons.',
+ 'extensions.zenkai':'A neon ecosystem with eleven dark variants, translucent surfaces, and tuned contrast for a vibrant, distinctive coding experience.',
  'projects.neondb':'Source code, studies and development of the Neon DB project.',
  'hero.title':'CODE<br><em>WITH</em><br>INTENT.', 'hero.scroll':'EXPLORE THE NEXT CHAPTER',
  'about.first':'I am a developer who is always learning, interested in turning good ideas into products that are easy to use and maintain.',

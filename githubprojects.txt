@@ -1,3 +1,16 @@
+extensions
+
+https://github.com/ViselBrx/HellsParaside-Extension.git
+ - https://open-vsx.org/extension/hellsparadise/hells-paraside-theme - https://marketplace.visualstudio.com/items?itemName=hellsparadise.hells-paraside-theme
+https://github.com/ViselBrx/DDLC-Extension.git
+ - https://open-vsx.org/extension/ddlc-fan/ddlc-themes - https://marketplace.visualstudio.com/items?itemName=ddlc-fan.ddlc-themes
+https://github.com/ViselBrx/NocturneCity-Extension.git
+ - https://marketplace.visualstudio.com/items?itemName=nocturne-city.nocturne-city-theme - https://open-vsx.org/extension/nocturne-city/nocturne-city-theme
+https://github.com/ViselBrx/DarkFantasy-Extension.git
+ - https://open-vsx.org/extension/dark-fantasy-theme/dark-fantasy-theme - https://marketplace.visualstudio.com/items?itemName=dark-fantasy-theme.dark-fantasy-theme
+https://github.com/Zenkai-Team/Zenkai-Extension.git
+ - https://open-vsx.org/extension/zenkai/zenkai-vscode-extension - https://marketplace.visualstudio.com/items?itemName=Zenkai.zenkai-vscode-extension
+
 flutter 
 
 https://github.com/zenvexy/Financiamento-Flutter2026
